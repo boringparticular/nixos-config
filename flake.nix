@@ -19,6 +19,7 @@
         system,
         ...
       }: {
+        formatter = pkgs.alejandra;
       };
       flake = {
       };
