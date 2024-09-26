@@ -20,6 +20,7 @@
         ...
       }: {
         formatter = pkgs.alejandra;
+        devShells.default = import ./shell.nix {inherit pkgs;};
       };
       flake = {
       };
