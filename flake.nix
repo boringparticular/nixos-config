@@ -19,6 +19,9 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.05";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-working-chrome-electron.url = "github:nixos/nixpkgs/8e75f95b3f74ed8815ccbaaecebb1685b5f6ab6b";
+
+    hardware.url = "github:NixOS/nixos-hardware/master";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-24.05";
@@ -73,7 +76,8 @@
       inherit outputs;
     };
   in
-    flake-parts.lib.mkFlake {inherit inputs;} {
+    flake-parts.lib.mkFlake {inherit inputs;}
+    (toplevel @ {withSystem, ...}: {
       imports = [
       ];
 
@@ -111,6 +115,26 @@
 
       flake = {
         overlays = import ./overlays {inherit inputs outputs;};
+
+        nixosConfigurations = {
+          zeus = withSystem "x86_64-linux" ({pkgs, ...}:
+            inputs.nixpkgs.lib.nixosSystem {
+              inherit specialArgs;
+              modules = [
+                {
+                  nix.registry = {
+                    nixpkgs.flake = inputs.nixpkgs;
+                  };
+                  nixpkgs.pkgs = pkgs;
+                }
+                inputs.boringvim.nixosModules.default
+                inputs.catppuccin.nixosModules.catppuccin
+                inputs.home-manager.nixosModules.home-manager
+                {home-manager.extraSpecialArgs = specialArgs;}
+                ./hosts/zeus
+              ];
+            });
+        };
       };
-    };
+    });
 }
