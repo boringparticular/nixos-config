@@ -2,7 +2,9 @@
   services.mako = {
     enable = true;
     anchor = "top-center";
-    font = "NotoSans Nerd Font 14";
+    font = "NotoSans Nerd Font 12";
+    width = 400;
+    height = 280;
     borderRadius = 5;
     borderSize = 3;
     backgroundColor = "#1e1e2e";
