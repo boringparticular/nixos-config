@@ -6,7 +6,7 @@
   programs.rofi = {
     enable = true;
     package = pkgs.rofi-wayland;
-    terminal = "$TERMINAL";
+    terminal = "foot";
     extraConfig = {
       modi = "combi,run,drun,window,ssh";
       show-icons = true;
