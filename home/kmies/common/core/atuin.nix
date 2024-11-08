@@ -21,7 +21,7 @@
 
   programs.atuin = {
     enable = true;
-    package = pkgs.atuin;
+    package = pkgs.unstable.atuin;
     enableZshIntegration = true;
     enableNushellIntegration = true;
     enableFishIntegration = true;
