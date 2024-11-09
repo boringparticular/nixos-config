@@ -1,4 +1,5 @@
 {inputs, ...}: {
+  calibre-web = import ./calibre-web.nix;
   chrome-fix = import ./chrome-fix.nix {inherit inputs;};
   deluge1 = import ./deluge.nix {inherit inputs;};
   vivaldi = import ./vivaldi.nix {inherit inputs;};
