@@ -10,19 +10,34 @@
   stable-packages = final: prev: {
     stable = import inputs.nixpkgs-stable {
       system = final.system;
-      config.allowUnfree = true;
+      config = {
+        allowUnfree = true;
+        permittedInsecurePackages = [
+          "electron-27.3.11"
+        ];
+      };
     };
   };
   unstable-packages = final: prev: {
     unstable = import inputs.nixpkgs-unstable {
       system = final.system;
-      config.allowUnfree = true;
+      config = {
+        allowUnfree = true;
+        permittedInsecurePackages = [
+          "electron-27.3.11"
+        ];
+      };
     };
   };
   master-packages = final: prev: {
     unstable = import inputs.nixpkgs-master {
       system = final.system;
-      config.allowUnfree = true;
+      config = {
+        allowUnfree = true;
+        permittedInsecurePackages = [
+          "electron-27.3.11"
+        ];
+      };
     };
   };
 }
