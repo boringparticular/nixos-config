@@ -9,7 +9,6 @@
     yubioath-flutter
     age-plugin-yubikey
     yubico-piv-tool
-    yubioath-flutter
   ];
 
   systemd.user.services.yubikey-touch-detector = {
