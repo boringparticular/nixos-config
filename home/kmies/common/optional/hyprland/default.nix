@@ -137,7 +137,7 @@
 
         "$mainMod_CTRL, A, cyclenext,"
         "$mainMod_CTRL, S, swapnext,"
-        "$mainMod_CTRL, D, fakefullscreen,"
+        # "$mainMod_CTRL, D, fakefullscreen,"
 
         "$mainMod, Print, exec, grim -g \"$(slurp)\""
         "$mainMod_SHIFT, Print, exec, grim -g \"$(slurp)\" - | ${pkgs.wl-clipboard}/bin/wl-copy"
