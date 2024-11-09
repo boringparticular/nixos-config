@@ -30,7 +30,7 @@
     };
   };
   master-packages = final: prev: {
-    unstable = import inputs.nixpkgs-master {
+    master = import inputs.nixpkgs-master {
       system = final.system;
       config = {
         allowUnfree = true;
