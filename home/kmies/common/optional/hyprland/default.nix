@@ -9,6 +9,11 @@
     ./waybar.nix
   ];
 
+  # Does xonsh not sourcec hm-session-vars.sh?
+  home.sessionVariables = {
+    NIXOS_OZONE_WL = "1";
+  };
+
   gtk = {
     gtk2.extraConfig = ''
       gtk-im-module="fcitx"
