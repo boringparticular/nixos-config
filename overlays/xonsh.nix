@@ -63,6 +63,26 @@ final: prev: {
           };
           doCheck = false;
         })
+        (buildPythonPackage {
+          pname = "xonsh-zoxide";
+          version = "v1.0.0";
+          format = "pyproject";
+
+          propagatedBuildInputs = [
+            setuptools
+            poetry-core
+            xonsh
+          ];
+
+          src = pkgs.fetchFromGitHub {
+            owner = "dyuri";
+            repo = "xontrib-zoxide";
+            rev = "36d3d0bc5945f2cd7aefdff598c6f7eeccfb1770";
+            hash = "sha256-lYx5dfmVebSYls9rbvAeD8GdzYkwv/qy75xp1m+/mdA=";
+          };
+
+          doCheck = false;
+        })
       ];
   };
 }
