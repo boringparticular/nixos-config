@@ -26,6 +26,7 @@
     eza
     fd
     fzf
+    iotop
     jq
     procs
     ripgrep
