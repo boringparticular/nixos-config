@@ -52,17 +52,9 @@
     options kvm ignore_msrs=1
   '';
 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-
-  boot.plymouth.enable = true;
-  boot.initrd.systemd.enable = true;
   # boot.kernelParams = ["quiet"];
-
-  time.timeZone = "Europe/Berlin";
 
   networking.hostName = "zeus";
 
   services.xserver.videoDrivers = ["intel" "amdgpu"];
-
-  networking.firewall.enable = lib.mkDefault false;
 }
