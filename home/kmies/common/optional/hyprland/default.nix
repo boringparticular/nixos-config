@@ -8,6 +8,7 @@
   # Does xonsh not sourcec hm-session-vars.sh?
   home.sessionVariables = {
     NIXOS_OZONE_WL = "1";
+    TERMINAL = "foot";
   };
 
   gtk = {
