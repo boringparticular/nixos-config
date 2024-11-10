@@ -6,6 +6,7 @@
       u2fAuth = true;
     };
     sddm.u2fAuth = true;
+    gdm.u2fAuth = true;
   };
 
   security.pam.u2f = {
