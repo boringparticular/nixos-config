@@ -15,6 +15,7 @@
     ../common/users/kmies
     ../common/optional/audio.nix
     ../common/optional/catppuccin.nix
+    ../common/optional/clamav.nix
     ../common/optional/fcitx.nix
     ../common/optional/flatpak.nix
     ../common/optional/gaming.nix
