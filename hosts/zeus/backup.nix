@@ -24,11 +24,10 @@
       "/home/**/.cache"
     ];
 
-    environment.BORG_RSH = "ssh -o 'StrictHostKeyChecking=no' -i ${config.sops.secrets.zeusBackupSSHKey.path}";
-    encryption.passCommand = "cat ${config.sops.secrets.zeusBackupPassword.path}";
+    environment.BORG_RSH = "ssh -o 'StrictHostKeyChecking=no' -i ${config.sops.secrets."zeus/backup/ssh_key".path}";
+    encryption.passCommand = "cat ${config.sops.secrets."zeus/backup/password".path}";
     encryption.mode = "repokey-blake2";
     archiveBaseName = "${config.networking.hostName}";
-    # TODO: Get it from the secrets repo
     repo = configVars.hosts.zeus.backupRepo;
     startAt = "*-*-* 09,17:00:00";
     prune.keep = {
